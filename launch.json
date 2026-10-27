@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "PaperclashToken",
+    "name": "Paperclash",
+    "symbol": "PAPER",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 6000,
+    "initialMarketCapWei": "2500000000000000000000",
+    "remainderTo": "0xee2aaa315cf7ed169f93148d30d24af9318dbb66"
+  },
+  "notes": "PaperclashToken (Paperclash, PAPER) is a plain fixed-supply ERC-20 built on OpenZeppelin v5.4.0 ERC20 and ERC20Permit. Its constructor takes no arguments and mints the whole supply of 1,000,000,000 PAPER (1000000000000000000000000000 minor units, 18 decimals) once to msg.sender, the launch factory. Nothing can mint afterwards: there is no owner, minter, pause, blacklist, freeze, tax, burn-from or upgrade path, and the runtime contains no DELEGATECALL, CALLCODE or SELFDESTRUCT. Every transfer moves exactly the amount requested, so the factory's transfer to the MerkleDistributor, the distributor's claims, the single-sided pool seed through the Uniswap v4 PoolManager, swaps each way and the forward of the remainder to economics.remainderTo all arrive whole. ERC-2612 permit lets holders grant allowances by signature; it adds no privileged role. The launch deploys no application contracts. Pool: paired with IMD at 0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7, fee 12500, tick spacing 60; initialPrice is provenance only and the deployer derives the opening price from economics.initialMarketCapWei and totalSupply. Project: x.com/paperclash_xyz"
+}
